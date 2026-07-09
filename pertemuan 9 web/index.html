@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Bilangan</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+
+        .container{
+            background:white;
+            width:450px;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        h1{
+            margin-bottom:25px;
+        }
+
+        input{
+            width:230px;
+            padding:10px;
+            font-size:16px;
+        }
+
+        button{
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+            margin-left:10px;
+        }
+
+        .hasil{
+            margin-top:25px;
+            text-align:left;
+            font-size:18px;
+            line-height:35px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Konversi Bilangan</h1>
+
+    <input type="number" id="desimal" placeholder="Masukkan Bilangan Desimal">
+
+    <button onclick="konversi()">Konversi</button>
+
+    <div class="hasil">
+        <p><b>Biner :</b> <span id="biner">-</span></p>
+        <p><b>Oktal :</b> <span id="oktal">-</span></p>
+        <p><b>Heksadesimal :</b> <span id="heksa">-</span></p>
+    </div>
+
+</div>
+
+<script>
+
+function konversi(){
+
+    let angka = parseInt(document.getElementById("desimal").value);
+
+    if(isNaN(angka)){
+        alert("Masukkan bilangan desimal terlebih dahulu!");
+        return;
+    }
+
+    document.getElementById("biner").innerHTML = angka.toString(2);
+
+    document.getElementById("oktal").innerHTML = angka.toString(8);
+
+    document.getElementById("heksa").innerHTML = angka.toString(16).toUpperCase();
+
+}
+
+</script>
+
+</body>
+</html>
